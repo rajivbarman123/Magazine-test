@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>College Magazine - E-Version</title>
 
-  <!-- Include DearFlip Core CSS Stylesheets -->
+  <!-- Premium Production Scripts via Fast Delivery CDN -->
   <link href="https://cdn.jsdelivr.net/npm/dearflip@1.7.5/css/dflip.min.css" rel="stylesheet" type="text/css">
-  <!-- Include Material Icons for the Toolbar Controls -->
   <link href="https://cdn.jsdelivr.net/npm/dearflip@1.7.5/css/themify-icons.min.css" rel="stylesheet" type="text/css">
 
   <style>
@@ -15,40 +14,34 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      background-color: #00152e; /* Matches your college footer slate theme */
+      background-color: #00152e; /* Matches your core footer slate palette */
+      overflow: hidden;
     }
-    #magazine-container {
-      height: 100vh;
+    /* Fixed container constraints ensuring the layout renders on mobile viewports */
+    #magazine-layout {
       width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
-    /* Simple CSS override to ensure no branding wraps display */
-    .df-share-toggle { display: none !important; }
+    /* Native style overrides to drop sharing panels and maintain an institutional feel */
+    .df-share-toggle, .df-icon-share { display: none !important; }
   </style>
 </head>
 <body>
 
-  <!-- The Target Container Where the Flipbook Displays -->
-  <div id="magazine-container"></div>
+  <!-- HTML Class-Based Auto Initialization (More reliable than jQuery selectors on shared hosts) -->
+  <div class="_df_book" 
+       id="magazine-layout" 
+       backgroundcolor="#00152e"
+       df-render="3d"
+       source="alokxandhan2026.pdf">
+  </div>
 
-  <!-- Include jQuery library and DearFlip Core Engine Javascript Components -->
+  <!-- Include Core Javascript Modules -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dearflip@1.7.5/js/dflip.min.js"></script>
-
-  <script>
-    $(document).ready(function() {
-      // Configuration pointing directly to your uploaded PDF
-      var pdfUrl = "alokxandhan2026.pdf"; 
-
-      // Initialize the logo-free 3D web flipbook layout
-      $("#magazine-container").flipBook(pdfUrl, {
-        backgroundImage: "",
-        backgroundColor: "#00152e",
-        duration: 800, // Smoothness speed of page turn animation
-        enableDownload: true, // Allows teachers/students to download original file
-        enablePrint: true
-      });
-    });
-  </script>
 
 </body>
 </html>
