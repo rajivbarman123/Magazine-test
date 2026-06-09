@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>College Magazine - E-Version</title>
 
-  <!-- Production Stable CSS Stylesheets -->
+  <!-- Stable Production Stylesheets -->
   <link href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.3/dflip/css/dflip.min.css" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.3/dflip/css/themify-icons.min.css" rel="stylesheet" type="text/css">
 
@@ -14,15 +14,12 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      background-color: #00152e; /* Matches your core footer slate palette */
+      background-color: #00152e; /* Matches your core slate palette */
       overflow: hidden;
     }
-    #magazine-layout {
+    #magazine-container {
       width: 100%;
       height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 0;
     }
     /* Native style overrides to drop sharing panels and maintain a clean institutional feel */
     .df-share-toggle, .df-icon-share { display: none !important; }
@@ -30,17 +27,32 @@
 </head>
 <body>
 
-  <!-- HTML Class-Based Auto Initialization -->
-  <div class="_df_book" 
-       id="magazine-layout" 
-       backgroundcolor="#00152e"
-       df-render="3d"
-       source="alokxandhan2026.pdf">
-  </div>
+  <!-- Layout Container Anchor Point -->
+  <div id="magazine-container"></div>
 
-  <!-- Include Core JavaScript Modules with matching version dependencies -->
+  <!-- Include Core JavaScript Modules -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.3/dflip/js/dflip.min.js"></script>
+
+  <script>
+    // Explicitly point the engine background components to the online library network
+    var dFlipLocation = "https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.3/dflip/";
+
+    $(document).ready(function() {
+      // Configuration pointing directly to your uploaded PDF
+      var pdfUrl = "alokxandhan2026.pdf"; 
+
+      // Initialize the logo-free 3D web flipbook layout
+      $("#magazine-container").flipBook(pdfUrl, {
+        backgroundImage: "",
+        backgroundColor: "#00152e",
+        duration: 800, // Smoothness speed of page turn animation
+        enableDownload: true, // Allows teachers/students to download original file
+        enablePrint: true,
+        webgl: true // Forces high-performance 3D canvas modes
+      });
+    });
+  </script>
 
 </body>
 </html>
