@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>College Magazine - E-Version</title>
 
-  <!-- Premium Production Scripts via Fast Delivery CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/dearflip@1.7.5/css/dflip.min.css" rel="stylesheet" type="text/css">
-  <link href="https://cdn.jsdelivr.net/npm/dearflip@1.7.5/css/themify-icons.min.css" rel="stylesheet" type="text/css">
+  <!-- Production Stable CSS Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.3/dflip/css/dflip.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.3/dflip/css/themify-icons.min.css" rel="stylesheet" type="text/css">
 
   <style>
     body, html {
@@ -17,7 +17,6 @@
       background-color: #00152e; /* Matches your core footer slate palette */
       overflow: hidden;
     }
-    /* Fixed container constraints ensuring the layout renders on mobile viewports */
     #magazine-layout {
       width: 100%;
       height: 100vh;
@@ -25,13 +24,13 @@
       top: 0;
       left: 0;
     }
-    /* Native style overrides to drop sharing panels and maintain an institutional feel */
+    /* Native style overrides to drop sharing panels and maintain a clean institutional feel */
     .df-share-toggle, .df-icon-share { display: none !important; }
   </style>
 </head>
 <body>
 
-  <!-- HTML Class-Based Auto Initialization (More reliable than jQuery selectors on shared hosts) -->
+  <!-- HTML Class-Based Auto Initialization -->
   <div class="_df_book" 
        id="magazine-layout" 
        backgroundcolor="#00152e"
@@ -39,9 +38,9 @@
        source="alokxandhan2026.pdf">
   </div>
 
-  <!-- Include Core Javascript Modules -->
+  <!-- Include Core JavaScript Modules with matching version dependencies -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dearflip@1.7.5/js/dflip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.3/dflip/js/dflip.min.js"></script>
 
 </body>
 </html>
