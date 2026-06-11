@@ -40,15 +40,16 @@
 
     $(document).ready(function() {
       // Configuration pointing directly to your uploaded PDF
-      var pdfUrl = "alokxandhan2026.pdf"; 
+      var pdfUrl = "darpan-2026.pdf"; 
 
       // Initialize the logo-free 3D web flipbook layout
       $("#magazine-container").flipBook(pdfUrl, {
         backgroundImage: "",
         backgroundColor: "#00152e",
         duration: 800, // Smoothness speed of page turn animation
-        enableDownload: true, // Allows teachers/students to download original file
+        enableDownload: false, // Allows teachers/students to download original file
         enablePrint: true,
+        enableShare: false,
         webgl: true // Forces high-performance 3D canvas modes
       });
     });
